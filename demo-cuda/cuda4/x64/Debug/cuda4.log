@@ -1,0 +1,13 @@
+﻿Build started 11/4/2015 9:08:18 AM.
+     1>Project "C:\Users\oli10\Desktop\cuda\cuda4\cuda4.vcxproj" on node 2 (Clean target(s)).
+     1>CudaClean:
+         cmd.exe /C "C:\Users\oli10\AppData\Local\Temp\tmp02bf41735a8c4cb2b53032cd02409e2f.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I../include -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile   -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o x64\Debug\cuda4.cu.obj "C:\Users\oli10\Desktop\cuda\cuda4\cuda4.cu" -clean
+         
+         C:\Users\oli10\Desktop\cuda\cuda4>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I../include -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile   -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o x64\Debug\cuda4.cu.obj "C:\Users\oli10\Desktop\cuda\cuda4\cuda4.cu" -clean 
+         cuda4.cu
+     1>Done Building Project "C:\Users\oli10\Desktop\cuda\cuda4\cuda4.vcxproj" (Clean target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.55

@@ -1,0 +1,132 @@
+
+//This code generates random numbers into array throught threads and sort them (not by threads).
+
+// ***********************************************************************
+//
+// Demo program for subject Computer Architectures and Paralel systems 
+// Petr Olivka, Dept. of Computer Science, FEECS, VSB-TU Ostrava
+// email:petr.olivka@vsb.cz
+//
+// Threads programming example for Linux (10/2016)
+// For the propper testing is necessary to have at least 2 cores CPU
+//
+// ***********************************************************************
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <sys/time.h>
+#include <sys/param.h>
+#include <pthread.h>
+
+
+#define TYPE int
+
+struct thread_argument
+{
+    int id;                 // user identification
+    int from;       
+    int length;             // data range
+    TYPE *data;             // array
+};
+
+//fills a part of an array with random numbers
+void random(int left, int length, TYPE *array)
+{
+    srand((unsigned)time(NULL));
+    printf("Random numgers generation started...\n");
+    fflush(stdout);
+    for (int i = left; i < left + length; i++)
+    {
+        array[i] = 1+ rand() % ((left + 1)*666);
+
+    }
+}
+//for bubbleSort
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+//bubbleSort
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n-1; i++)
+
+        // Last i elements are already in place
+        for (j = 0; j < n-i-1; j++)
+            if (arr[j] > arr[j+1])
+                swap(&arr[j], &arr[j+1]);
+}
+.
+void *my_thread( void *void_arg )
+{
+    thread_argument *ptr_data = ( thread_argument * ) void_arg;
+
+    printf( "Thread %d started from %d with length %d...\n",
+            ptr_data->id, ptr_data->from, ptr_data->length );
+
+    random(ptr_data->from, ptr_data->length, ptr_data->data);
+
+
+    return NULL;
+}
+
+// Time interval between two measurements
+int timeval_to_ms( timeval *before, timeval *after )
+{
+    timeval res;
+    timersub( after, before, &res );
+    return 1000 * res.tv_sec + res.tv_usec / 1000;
+}
+
+#define LENGTH_LIMIT 100 //minimum length of an array
+
+int main( int na, char **arg )
+{
+    int my_length =150; //length of an array
+    int pocet_vlaken = 10; //number of threads
+
+    // array allocation
+    TYPE *my_array = new TYPE [ my_length ];
+    if ( !my_array )
+    {
+        printf( "Not enought memory for array!\n" );
+        return 1;
+    }
+    
+    pthread_t *pt = new pthread_t[pocet_vlaken];//creating pointer to array of threads
+    thread_argument *tag = new thread_argument[pocet_vlaken];//creating pointer to array of structures
+
+    //filling structures
+    int length = my_length/pocet_vlaken;
+    for(int i = 0; i< pocet_vlaken; i++)
+    {
+        tag[i].id = i; //ID
+        tag[i].from = length*i; //from what index
+        tag[i].length = length; //length of part
+        tag[i].data = my_array; //the array we want to fill
+    }
+
+    //creating threads
+    for(int i = 0; i< pocet_vlaken; i++)
+    {
+        pthread_create( &pt[i], NULL, my_thread, &tag[i]); 
+    }
+    //joining threads
+    for(int i = 0; i< pocet_vlaken; i++)
+    {
+        pthread_join( pt[i], NULL);
+    }
+    bubbleSort(my_array,my_length);
+    for(int i = 0; i <my_length; i++) //printing array with ~ between numbers
+    {
+        printf("%d ~ ", my_array[i]);
+        if(!(i%20)&&i!=0){
+            printf("\n");
+        }
+    }
+}

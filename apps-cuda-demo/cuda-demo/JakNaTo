@@ -1,0 +1,6 @@
+Priklady programovani CUDA technologie v OS Linux pro predmet APPS.
+(c) Petr Olivka, katedra informatiky, FEI, VSB-TU Ostrava
+
+Kazdy adresar cuda* obsahuje Makefile, staci tedy pro sestaveni programu
+zavolat v kazdem adresari prikaz "make".
+

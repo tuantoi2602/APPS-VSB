@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="i2c_ack" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="I2C_Ack"/>
+			<item value="I2C_Input"/>
+			<item value="I2C_Output"/>
+			<item value="SI4735_address"/>
+			<item value="I2C_Stop"/>
+			<item value="I2C_Start"/>
+			<item value="I2C_Init"/>
+			<item value="LCD_"/>
+			<item value="SPI_write_data"/>
+			<item value="l_ack |= i2c_output( SI4735_address );"/>
+			<item value="g_SCL"/>
+			<item value="g_SDA"/>
+			<item value="_i2c_SCL"/>
+			<item value="_i2c_SDA"/>
+			<item value="i2c_Ack"/>
+		</list>
+		<list key="replacehistory">
+			<item value="i2c_ack"/>
+			<item value="i2c_input"/>
+			<item value="i2c_output"/>
+			<item value="SI4735_ADDRESS"/>
+			<item value="i2_stop"/>
+			<item value="i2c_start"/>
+			<item value="i2c_init"/>
+			<item value="lcd_"/>
+			<item value="g_scl"/>
+			<item value="g_sda"/>
+			<item value="_i2c_scl"/>
+			<item value="_i2c_sda"/>
+			<item value="i2c_nack"/>
+			<item value="l_ack"/>
+			<item value="i2c_stop"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="348" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="440" key="DIALOG_HEIGHT"/>
+		<item value="1410" key="DIALOG_X_ORIGIN"/>
+		<item value="340" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

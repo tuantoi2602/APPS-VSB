@@ -1,0 +1,7 @@
+16:00:34 **** Incremental Build of configuration Debug for project leds ****
+make -r -j6 linker-script-debug.ld all 
+make: 'linker-script-debug.ld' is up to date.
+make: Nothing to be done for 'all'.
+
+16:00:34 Build Finished. 0 errors, 0 warnings. (took 472ms)
+

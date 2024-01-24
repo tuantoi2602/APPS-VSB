@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdk-packages>
+<package hash="1536871455000" path="/poli/home/vyuka/apps/workspace.mcu/leds/part-support" schema="manifest-schema/sdk_manifest_v3.3.xsd"/>
+<package hash="1536871455000" path="/poli/home/vyuka/apps/workspace.mcu/lcd/part-support" schema="manifest-schema/sdk_manifest_v3.3.xsd"/>
+<package hash="1536871455000" path="/poli/home/vyuka/apps/workspace.mcu/i2c/part-support" schema="manifest-schema/sdk_manifest_v3.3.xsd"/>
+<package hash="1536871455000" path="/poli/home/vyuka/apps/workspace.mcu/demo/part-support" schema="manifest-schema/sdk_manifest_v3.3.xsd"/>
+</sdk-packages>

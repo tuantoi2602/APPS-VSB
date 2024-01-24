@@ -1,0 +1,17 @@
+1. Program kernel and function for image insertion and selection. The grid for kernel will cover the small image!
+  void cu_run_img_ins_sel( CudaImg &t_big_img, CudaImg &t_small_img, int2 t_position, int t_ins_or_select );
+2. Rotate image 90 degree.
+BUI0016, CHU0097, NGU0062, NGU0120, TRU0068, VOD0053: rotate clockwise
+LAM0056, NGU0061, PHA0027, PHA0044, POS0244, TRA0083: rotate counterclockwise
+  void cu_run_img_rotate90( CudaImg &t_in_img, CudaImg &t_out_img );
+3. Download two own pictures with the same size, not square! Use previous functions.
+BUI0016, NGU0062, POS0244: select top-left corner and bottom-right corner (25% of the whole size) from the first image, rotate twice and insert into the second image, see example below.
+
+
+CHU0097, NGU0120, TRA0083: select bottom-left corner and top-right corner (25% of the whole size) from the first image, rotate twice and insert into the second image, see example below.
+
+
+LAM0056, PHA0027, TRU0068: select top and bottom part (25% of the whole height) from the first image, rotate twice and insert into the second image, see example below.
+
+
+NGU0061, PHA0044, VOD0053: select left and right part (25% of the whole width) from the first image, rotate twice and insert into the second image, see example below.

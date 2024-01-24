@@ -1,0 +1,24 @@
+Task 1:
+1. Control brightness of single LED. Specify brightness by value in percent.
+
+2. Control brightness of more LEDs. Organize/collect LEDs in array.
+
+3. Control brightness using ticker.
+
+4. Change brightness by buttons.
+
+Task 2:
+1. Using buttons 9, 10 and 11 start slow increasing of brightness of left Red, Green and Blue LED. The level from 0% will go to 100% in 2 seconds. (2p)
+
+2. Releasing buttons the brightness will automatically go down to brightness 0%. (2p)
+
+3. When you press button 12, you will control right RGB LED. (1p)
+
+4. Extra points: double click on button 12 will freeze the current LED states. (2p)
+
+Task 3:
+1. Using buttons 9, 10 and 11 increase brightnes of left Red, Green and Blue LED. When left LED will be at 100%, then start increase brightness of right LED. When button is released, then brightness will stay unchanged.
+
+2. Pressing button 12 and other button will decrease brightness in oposit order. At first descrease brightness of right LED and then left LED.
+
+3. Double click of button 12 will set all brightness to 0%.

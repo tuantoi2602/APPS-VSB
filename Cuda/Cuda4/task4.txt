@@ -1,0 +1,27 @@
+1. Draw one character into empty transparent image. Use fonts from LCD Simulator:
+
+BUI0016: font12x16_lsb.h
+CHU0097: font12x20_lsb.h
+LAM0056: font16x26_lsb.h
+NGU0061: font22x36_lsb.h
+NGU0062: font24x40_lsb.h
+NGU0120: font32x53_lsb.h
+PHA0027: font12x16_msb.h
+PHA0044: font12x20_msb.h
+POS0244: font16x26_msb.h
+TRA0083: font22x36_msb.h
+TRU0068: font24x40_msb.h
+VOD0053: font32x53_msb.h
+cu_run_draw_char( CudaImg &t_img, int2 t_pos, uchar3 t_color, char t_char, CudaImg &t_font, uint2 t_font_size );
+2. Implement function to draw text into image. Use previous function.
+draw_text( CudaImg &t_img, int2 t_pos, uchar3 t_color, char *t_text, CudaImg &t_font, uint2 t_font_size )
+{
+  for ( int inx = 0; inx < strlen( t_text ); inx++ )
+  {
+    ....
+    cu_run_draw_char( t_img, ....., ...., t_text[ inx ], ...., .... );
+  }
+}
+3. Copy code from cuda5_unm for inserting transparent image into your program and test it.
+
+4. Draw two lines of text into empty trasparent image. Draw on random position with random color and random transparency. See example on screen.

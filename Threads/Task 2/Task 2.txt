@@ -1,0 +1,46 @@
+This task is substitution for radio on MCU.
+
+Matrix multiplication using threads. Matrix will be composed from float or double elements.
+
+Input: size of the first and the second matrix and number of threads.
+
+Prepare code for matrix multiplication where will be specified range of rows of the first matrix to be multiplied.
+
+Prototype multiply( matrix &M1, matrix &M2, matrix &Out, int m1_from, int m1_to );.
+
+The main idea:
+
+void multiply( matrix M1, matrix M2, matrix Out, int m1_from, int m1_to )
+{
+    if ( M1.cols != M2.rows ) bad_matrices;
+    for ( row = m1_from; row < m1_to; ... ) // only selected part of matrix M1
+    {
+        for ( col = 0; col < M2.cols; ... )
+        {
+            Out[ row ][ col ] = 0;
+            for ( inx = 0; inx < M2.rows; ... )
+                Out[ row ][ col ] += M1[ row ][ inx ] * M2[ inx ][ col ];
+        }
+    }
+}
+
+
+// Multiplication of the whole matrices 
+multiply( M1, M2, M3, 0, M1.rows );
+
+// Multiplication using N threads
+thread1: multiply( M1, M2, M3,               0, 1 * M1.rows / N );
+thread2: multiply( M1, M2, M3, 1 * M1.rows / N, 2 * M1.rows / N );
+thread3: multiply( M1, M2, M3, 2 * M1.rows / N, 3 * M1.rows / N );
+....
+threadN: multiply( M1, M2, M3, (N-1) * M1.rows / N, N * M1.rows / N );
+Tasks:
+
+BUI0016, CHU0097, NGU0062, NGU0120, POS0244, TRA0083 will use type float
+LAM0056, NGU0061, PHA0027, PHA0044, TRU0068, VOD0053 will use type double
+
+1. Multiply two matrices and verify whether result is correct. The first matrix will contains numbers of range -1000 to 1000 without decimal digits. The second matrix will be unit matrix.
+
+2. Measure time of multiplication for mutlitplication without thread and using threads. In both cases you must obtain the same result.
+
+3. On the top of your source code write short explanation of your opinion, whether measured time is correct and why is or is not correct.(Everybody must have your own opininon!)

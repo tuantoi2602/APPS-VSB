@@ -1,0 +1,45 @@
+Thread programming.
+
+Prepare simple sorting algorithm to be able sort only selected part of array in ascending and descending order.
+
+Prepare merging of two sorted parts of array into one array, see https://www.youtube.com/watch?v=xF3TU-QlhJQ
+
+Sorting algorithms:
+
+BUI0016, CHU0097, LAM0056, NGU0061: Insertion sort
+NGU0062, NGU0120, PHA0027, PHA0044: Bubble sort
+POS0244, TRA0083, TRU0068, VOD0053: Selection sort
+Test your code:
+
+N = 20
+SOMETYPE array[ N ] = { 20, 19, 18, ... 2, 1 }
+
+P=4 // parts
+sort from index 0*N/P, length N/P
+sort from index 1*N/P, length N/P
+sort from index 2*N/P, length N/P
+sort from index 3*N/P, length N/P
+
+print array, it should be:
+16, 17, 18, 19, 20, 11, 12, 13, 14, 15, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5
+
+merge (not sort!) sorted parts into one array, result must be
+1, 2, 3, ... 19, 20
+Tasks:
+
+
+1. Define length of array and number of thread as argument of your program.
+
+2. Generate random float numbers of range from -1000.00 to 1000.00. Use ( ( ( float ) rand() % 200000 ) - 100000 ) / 100.0.
+
+3. Create COPY of this array.
+
+4. Sort array using threads descending and measure time. Merge all parts.
+
+5. Sort COPY of array without threads descending and measure time.
+
+6. Compare both arrays whether result is the same.
+
+7. Sort sorted array again descending and measure time.
+
+8. Sort sorted array ascending and measure time.

@@ -1,0 +1,35 @@
+1. Write new kernel and function for CUDA to separate from color image three basic colors into individual images.
+
+void cu_run_rgb_separation( CudaImg &t_pic_in, CudaImg &t_pic_out_r, CudaImg &t_pic_out_g, CudaImg &t_pic_out_b );
+
+
+
+2. Write new kernel and function for CUDA to make a mirror of color image:
+
+void cu_run_my_mirror( CudaImg &t_pic_in, CudaImg &t_pic_out );
+
+BUI0016, CHU0097: horizontal mirror - half from right
+LAM0056, NGU0061: vertical mirror - half from bottom
+NGU0062, NGU0120: horizontal mirror
+PHA0027, PHA0044: vertical mirror - half from top
+POS0244, TRA0083: horizontal mirror - half from left
+TRU0068, VOD0053: vertical mirror
+
+
+
+3. Use “your mirror” for following figure and remove some color points:
+
+
+
+BUI0016, CHU0097: remove all, not cyan
+LAM0056, NGU0061: remove cyan
+NGU0062, NGU0120: remove all, not yellow
+PHA0027, PHA0044: remove yellow
+POS0244, TRA0083: remove all, not magenta
+TRU0068, VOD0053: remove magenta
+
+cyan: g == b, r == 0
+
+yellow: g == r, b == 0
+
+magenta: b == r, g == 0

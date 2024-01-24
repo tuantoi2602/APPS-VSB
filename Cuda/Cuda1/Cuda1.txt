@@ -1,0 +1,42 @@
+Study basic functions of OpenCV, see documentation at OpenCV
+
+imread, imwrite, imshow, waitKey
+class Mat, how to create new image
+access one element of Mat using method at()
+access one color from/to point
+for testing use project LCD simulator
+Study materials for CUDA technology and demo programs are available at poli web page.
+
+In lab we have prepared for everyone his own computer. You can remotely login to computer using VNC protocol. For Windows is VNC VIewer available at realvnc. From Linux it is possible to use also e.g. program vinagree.
+
+Computers in lab are assigned for everybody as follows:
+
+BUI0016 - pcfeib430-022-191.vsb.cz
+CHU0097- pcfeib430-022-192.vsb.cz
+LAM0056- pcfeib430-022-193.vsb.cz
+NGU0061- pcfeib430-022-194.vsb.cz
+NGU0062- pcfeib430-022-195.vsb.cz
+NGU0120 - pcfeib430-022-196.vsb.cz
+PHA0027 - pcfeib430-022-197.vsb.cz
+PHA0044 - pcfeib430-022-198.vsb.cz
+POS0244 - pcfeib430-022-199.vsb.cz
+TRA0083 - pcfeib430-022-200.vsb.cz
+TRU0068 - pcfeib430-022-201.vsb.cz
+VOD0053 - pcfeib430-022-202.vsb.cz
+To connect use “well known” password.
+
+Tasks
+
+1. Extend structure CudaImg with constructor:
+
+CudaImg( Mat &t_img ) { ... }
+
+In the constructor will be coppied all necessary data from t_img into structure. It will avoid repaeted manual copy data between Mat and CudaImg in code.
+
+2. Extend structure CudaImg with method at( y, x ) (similarly as in Mat):
+
+uchar1 &at1( int t_y, int y_x ) { ... }
+uchar3 &at3( int t_y, int y_x ) { ... }
+uchar4 &at4( int t_y, int y_x ) { ... }
+
+3. Apply your new code in cuda3_unm example and test it.

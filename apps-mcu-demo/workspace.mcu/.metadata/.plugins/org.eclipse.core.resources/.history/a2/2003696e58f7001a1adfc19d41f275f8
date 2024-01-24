@@ -1,0 +1,94 @@
+// **************************************************************************
+//
+//               Demo program for labs
+//
+// Subject:      Computer Architectures and Parallel systems
+// Author:       Petr Olivka, petr.olivka@vsb.cz, 09/2019
+// Organization: Department of Computer Science, FEECS,
+//               VSB-Technical University of Ostrava, CZ
+//
+// File:         Main program for LEDs
+//
+// **************************************************************************
+
+#include "mbed.h"
+
+// Serial line for printf output
+Serial g_pc(USBTX, USBRX);
+
+// LEDs on K64F-KIT - instances of class DigitalOut
+DigitalOut g_led1(PTA1);
+DigitalOut g_led2(PTA2);
+DigitalOut g_ptc0(PTC0);
+DigitalOut g_ptc1(PTC1);
+DigitalOut g_ptc2(PTC2);
+DigitalOut g_ptc3(PTC3);
+DigitalOut g_ptc4(PTC4);
+DigitalOut g_ptc5(PTC5);
+DigitalOut g_ptc7(PTC7);
+DigitalOut g_ptc8(PTC8);
+
+// Button on K64F-KIT - instance of class DigitalIn
+DigitalIn g_but9(PTC9);
+DigitalIn g_but10(PTC10);
+DigitalIn g_but11(PTC11);
+DigitalIn g_but12(PTC12);
+
+void my_blink_function1()
+{
+	g_led1= !g_led1;
+}
+void my_blink_function2()
+{
+	g_led2= !g_led2;
+	if(g_but9 ==0)
+		g_led2=!g_led2;
+	else
+		g_led2=0;
+}
+void my_blink_functionptc0()
+{
+	if (g_but10 == 1)
+		g_ptc2=!g_ptc2;
+		g_ptc3=!g_ptc3;
+	else
+		g_ptc2=0;
+		g_ptc3=0;
+}
+int main()
+{
+	Ticker l_my_ticker1;
+	l_my_ticker1.attach_us(callback( my_blink_functionptc0 ), 500000);
+	while (1)
+	{
+		g_ptc0 = 1;
+		wait_ms(100);
+		g_led1 = 1;
+		wait_ms(5);
+		g_led1 = 0;
+		wait_ms(20);
+	}
+	// Serial line initialization
+	//g_pc.baud(115200);
+	/*Ticker l_my_ticker1, l_my_ticker2;
+	l_my_ticker1.attach_us(callback( my_blink_function1 ), 500000);
+	l_my_ticker2.attach_us(callback( my_blink_function2 ), 50000);*/
+
+	/*while( 1 );*/
+	/*while (1)
+	{
+		int l_delay = 500;
+
+		g_led1 = !g_led1; 		// invert LED1 state
+
+		if (g_but9 == 0) 		// button pressed?
+		{
+			l_delay /= 10;		// speed up blinking
+			g_led2 = !g_led2;
+		}
+		else
+			g_led2 = 0; 		// LED2 off
+
+		wait_ms(l_delay);
+	}*/
+}

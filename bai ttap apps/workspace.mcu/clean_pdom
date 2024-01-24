@@ -1,0 +1,2 @@
+find -name "*.pdom"
+find -name "*.pdom" -exec rm {} \;

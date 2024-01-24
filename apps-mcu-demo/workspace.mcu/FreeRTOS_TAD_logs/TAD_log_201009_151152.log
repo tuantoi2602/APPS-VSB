@@ -1,0 +1,14 @@
+"FreeRTOS Task Aware Debugger for GDB" version 11.2.0 (202001021529)
+(c) 2016-2018 NXP Semiconductors, Inc.
+==================================
+14:49:18.554 INFO: [TadModel] DSF session ID 31 has started.
+14:49:20.218 INFO: [TadModel] DSF session ID 32 has started.
+14:49:21.739 INFO: [TadState] TAD state changed:  DEBUG_STARTED -> DEBUG_INIT_0 (SUSPENDED, USER_REQUEST)
+14:49:21.842 INFO: [TadState] TAD state changed:  DEBUG_INIT_0 -> DEBUG_INIT_1 (SUSPENDED, USER_REQUEST)
+14:49:22.324 INFO: [TadState] TAD state changed:  DEBUG_INIT_1 -> DEBUG_SUSPENDED (RESUMED, USER_REQUEST)
+14:49:22.361 INFO: [TadState] TAD state changed:  DEBUG_SUSPENDED -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+14:49:23.235 INFO: [TadState] TAD state changed:  DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+15:11:51.266 INFO: [TadState] TAD state changed:  DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+15:11:52.281 INFO: [TadModel] DSF session ID 32 has ended.
+15:11:52.282 INFO: [TadModel] DSF session ID 31 has ended.
+15:11:52.287 INFO: [Logger] TAD log was saved in "/home/fei/ngu0120/Downloads/APPS/apps-mcu-demo/workspace.mcu/FreeRTOS_TAD_logs/TAD_log_201009_151152.log"

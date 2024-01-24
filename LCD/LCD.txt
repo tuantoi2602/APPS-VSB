@@ -1,0 +1,30 @@
+LCD
+
+1. Draw font
+2. Draw line
+3.Draw circle
+
+
+
+
+
+
+
+
+Implement carousel, see video:
+
+carousel.mkv
+
+In circles use the first four characters from your login.
+
+Little bit help:
+
+  sx, sy - centerpoint of carousel
+  R1 = radius of arms
+  R2 = radius of circle and character centerpoints
+  sin1 = sin( alfa )
+  cos1 = cos( alfa )
+
+  line1 [ sx + sin1 * R1, sy + cos1 * R2 ][ sx - sin1 * R1, sy - cos1 * R1 ]
+  line2 [ sx - cos1 * R1, sy + sin1 * R2 ][ sx + cos1 * R1, sy - sin1 * R1 ]
+  .... etc....
